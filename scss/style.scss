@@ -1,0 +1,1101 @@
+@import "var";
+@import "mixin";
+
+@font-face {
+    font-family: GothamPro;
+    src: url(/fonts/GothamPro.ttf); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+img {
+  
+}
+
+ol, ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    min-width: 375px;
+    overflow-x: hidden;
+    font-family: GothamPro;
+    font-style: normal;
+
+}
+
+.container {
+    padding: 0px 15px;
+}
+.header {
+    background-image: url('../img/headerBg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    min-height: 666px;
+
+    &__scrollBg {
+        display: none;
+        background-color: #fff;
+    }
+    &__scroll {
+        min-height: 80px;
+        .logo__linkImg {
+            width: 80px;
+            height: 60px;
+        }
+    }
+}
+
+.logo {
+    &__linkImg {
+        width: 168px;
+        height: 122px;
+    }
+}
+
+.menu__hamburger {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    border: none;
+    background-color: $mainColor;
+    position: relative;
+    &::before {
+        content: '';
+        width: 30px;
+        height: 3px;
+        border-radius: 1.5px;
+        background-color: #fff;
+        position: absolute;
+        top: 15px;
+        left: 8px;
+        box-shadow: 0 8px 0 0 #fff, 0 16px 0 0 #fff;
+    }
+}
+
+.header__inner, .header__scroll {
+    @include flex (space-between);
+}
+
+.header {
+    &__description {
+        color: #FFFFFF;
+    }
+    &__descriptionTitle {
+        font-weight: bold;
+        font-size: 54px;
+        line-height: 110%;
+        text-shadow: 0px 0px 20px rgba(145, 145, 145, 0.25);
+        margin-top: 80px;
+        position: relative;
+        &::before {
+            content: "";
+            width: 60px;
+            height: 4px;
+            background-color: $mainColor;
+            border-radius: 2px;
+            position: absolute;
+            top: -6px;
+            left: 5px;
+        }
+    }
+    &__descriptionText {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 130%;
+    }
+    &__translocation {
+        margin-top: 90px;
+        @include flex ();
+        flex-wrap: wrap;
+    }
+    &__translocationItem {
+        @include flex ();
+        margin-bottom: 44px;
+    }
+    &__translocationBtn {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 17px;
+        color: #FFFFFF;
+        padding: 23px 99px;
+        background-color: $mainColor;
+        border: none;
+        border-radius: 5px;
+        border: 1.5px solid $mainColor;
+        box-shadow: 0px 4px 20px rgba(225, 161, 34, 0.5);
+        &:hover {
+            background-color: #fff;
+            color: $mainColor;
+            cursor: pointer;
+        }
+    }
+    &__translocationLink {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 17px;
+        color: #FFFFFF;
+        position: relative;
+        &::after {
+            content: url('/img/bottomHeaderBlockArrow.png');
+            position: absolute;
+            top: 0.3px;
+            right: -24px;
+        }
+    }
+}
+
+.info {
+    &__inner {
+        padding: 40px 0px;
+    }
+    &__item {
+        margin-bottom: 10px;
+    }
+    &__head {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 11px;
+        color: $mainColor;
+    }
+    &__title {
+        font-weight: 300;
+        font-size: 36px;
+        line-height: 110%;
+    }
+    &__text {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: justify;
+        &:first-child {
+            margin-bottom: 8px;
+        }
+    }
+}
+
+.catalog {
+    background-image: url('../img/catalogBg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: $catalogColorBg;
+    &--whiteBg {
+        background: #fff;
+    }
+    &__inner {
+        padding: 40px 0px;
+    }
+    &__list {}
+    &__listItems {
+        width: 100%;
+        min-height: 127px;
+        border-radius: 5px;
+        background-color: #fff;
+        @include flex (start,start);
+        margin-top: 15px;
+        padding: 20px;
+    }
+    &__listItemsNumber {
+        display: none;
+    }
+    &__listItem {
+        &:first-child {
+            width: 53px;
+            height: 60px;
+            margin-right: 10px;
+        }
+        &:last-child {
+            width: 242px;
+        }
+    }
+    &__listIcon {
+        width: 100%;
+        height: 100%;
+    }
+    &__listTitle {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 110%;
+        margin-bottom: 5px;
+    }
+    &__listText {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+    }
+}
+.title {
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 130%;
+    color: #fff;
+}
+
+.catalog {
+    &__exposition {
+        min-width: 345px;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 25px 15px;
+        margin-top: 15px;
+    }
+    &__expositionBoxForImg {
+        width: 100%;
+        min-height: 200px;
+        @include flex ();
+    }
+    &__expositionImg {
+        width: 253px;
+        height: 157px;
+    }
+    &__expositionText {
+        font-weight: normal;
+        font-size: 15px;
+        line-height: 140%;
+        padding-bottom: 10px;
+        text-align: justify;
+    }
+}
+
+.services {
+    &__title {
+        font-weight: bold;
+        font-size: 28px;
+        line-height: 27px;
+        color: $mainColor;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    &__price {
+        @include flex (start);
+        color: $priceColor;
+        margin-bottom: 10px;
+    }
+    &__priceNumber {
+        font-weight: bold;
+        font-size: 32px;
+        line-height: 31px;
+        margin-right: 7px;
+    }
+    &__priceCarrensy {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 15px;
+    }
+    &__time {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 17px;
+        color: #595959;
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 20px;
+        &::before {
+            content: url('/img/serviseTime.svg');
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    }
+    &__whatIncludePrice {}
+    &__whatIncludePriceTitle {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 13px;        
+        color: #595959;
+    }
+    &__whatIncludePriceList {
+        margin-top: 10px;
+    }
+    &__whatIncludePriceListItem {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        margin: 0px 0px 10px 25px;
+        position: relative;
+        &--yes {
+            color: #303030;
+            &::before {
+                content: url('/img/serviseIconYes.png');
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                left: -25px;
+                top: 2px; 
+            }
+        }
+        &--no {
+            color: #A5A5A5;
+            &::before {
+                content: url('/img/serviseIconNo.svg');
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                left: -25px;
+                top: 2px; 
+            }
+        }
+    }
+    &__button {
+        width: 100%;
+        height: 50px;
+        background-color: $mainColor;
+        border-radius: 5px;
+        border: 1.5px solid #E1A122;
+        box-shadow: 0px 4px 20px rgba(225, 161, 34, 0.5);
+        margin-top: 30px;
+        @include flex ();
+        color: #fff;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 17px;
+        &:hover {
+            cursor: pointer;
+            background-color: #fff;
+            color: $mainColor;
+        }
+    }
+}
+.services {
+    &__list {  
+        margin-top: 15px; 
+    }
+    &__listItem {
+        flex-basis: 345px;
+        flex-grow: 1;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 30px 20px;
+        margin-bottom: 15px;
+        &:last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.characteristics {
+    &__title {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 130%;
+        color: #303030;
+        margin-bottom: 15px;
+    }
+    &__list {}
+    &__item {
+        @include flex (start, start);
+        margin-bottom: 10px;
+    }
+    &__serialNumber {
+        width: 30px;
+        height: 33px;
+        background-image: url('../img/characteristicsSerialNumberBg.svg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        @include flex ();
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: $mainColor;
+    }
+    &__text {
+        flex-basis: 300px;
+        flex-grow: 1;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: #595959;
+        margin-left: 10px;
+    }
+    &__reminder {}
+    &__reminderItem {
+        @include flex (start, start);
+        margin-top: 20px;
+    }
+    &__box {
+        &--hidden {
+            display: none;
+        }
+    }
+}
+.simbolReminder {
+    width: 30px;
+    height: 30px;
+    border: 1px solid $mainColor;
+    border-radius: 50%;
+    @include flex ();
+    &__img {}
+}
+
+.comb {
+    width: 530px;
+    height: 519px;
+    @include flex (center, center, column);
+    position: relative;
+    &__row {
+        @include flex ();
+        position: absolute;
+        &--top {
+            top: 0px;
+        }
+        &--center {
+            top: 156px;
+        }
+        &--bottom {
+            bottom: 0px;
+        }
+    }
+    &__box {
+        width: 177px;
+        height: 207px;
+        background: $mainColor;
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        @include flex ();
+        position: relative;
+        &::before {
+            content: '';
+            width: 97%;
+            height: 97%;
+            background: rgba(50, 34, 15, 0.5);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            position: absolute;
+            top: 1.5%;
+            left: 1.5%;
+        }
+        &:hover {
+            &::before {
+                background: rgba(50, 34, 15, 0);
+            }
+        }
+    }
+    &__img {
+        width: 97%;
+        height: 97%;
+    }
+}
+
+.whatCan {
+    &__title {
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 130%;
+        margin-bottom: 15px;
+    }
+    &__box {
+        flex-basis: 345px;
+        flex-grow: 1;
+        border: 1px solid #C2CFD5;
+        border-radius: 10px;
+        padding: 25px 15px;
+        margin-bottom: 20px;
+    }
+    &__list {
+        width: 100%;
+    }
+    &__item {
+        width: 100%;
+        padding: 15px;
+        @include flex (start, space-between, column);
+    }
+    &__itemHeader {
+        @include flex (space-between);
+    }
+    &__itemTitle {
+        flex-basis: 240px;
+        flex-grow: 1;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130%;
+    }
+    &__itemNumber {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130%;
+        color: $mainColor;
+    }
+    &__itemButton {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: $mainColor;
+        margin-left: 10px;
+        position: relative;
+        &::before, &::after {
+            content: '';
+            background-color: #fff;
+            border-radius: 1px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &::before {
+            width: 10px;
+            height: 2px;
+        }
+        &::after {
+            width: 2px;
+            height: 10px;
+        }
+
+    }
+    &__itemMain {}
+    &__itemText {
+        margin-top: 10px;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 130%;
+        color: #595959;
+        text-align: justify;
+    }
+    &__notDo {
+        @include flex (start, start);
+        margin-bottom: 10px;
+    }
+    &__notDoTitle {
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 130%;
+        margin-left: 10px;
+    }
+    &__notDoList {
+        width: 100%;
+    }
+    &__notDoItem {
+        width: 100%;
+        padding: 15px;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 130%;
+        span {
+            color: $mainColor;
+        }
+    }
+}
+
+.dispatch {
+    &__item {}
+}
+.call {
+    &__title {}
+    &__text {}
+    &__toggle {}
+    &__toggleItem {}
+    &__request {}
+    &__input {}
+    &__verification {}
+    &__verificationIcon {}
+    &__verificationText {}
+    &__link {}
+    &__button {}
+    &__register {}
+}
+.contacts {
+    &__title {}
+    &__list {}
+    &__item {}
+    &__label {}
+    &__text {}
+    &__form {}
+    &__button {}
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 425px) {
+    .header {         
+        &__translocationBtn {
+            margin-right: 70px;
+        }  
+    }    
+}
+
+
+@media screen and (min-width: 768px) {
+    .container {
+        padding: 0px 20px;
+    }
+    .headerMenu__hamburger {
+        width: 50px;
+        height: 50px;
+        &::before {
+            width: 36px;
+            top: 15px;
+            left: 7px;
+            box-shadow: 0 9px 0 0 #fff, 0 18px 0 0 #fff;
+        }
+    }
+    .header {
+        &__scroll {
+            min-height: 90px;
+            .logo__link-img {
+                width: 110px;
+                height: 80px;
+            }
+        }
+        &__descriptionTitle {
+            font-size: 110px;
+            line-height: 105%;
+            &::before {
+                width: 114px;
+            }
+        }
+        &__descriptionText {
+            font-weight: normal;
+            font-size: 26px;
+        }
+        &__translocation {
+            @include flex (start);
+        }
+        &__translocationBtn {
+            font-size: 20px;
+            line-height: 19px;
+            padding: 30px 97px;
+        }
+    }
+    .info {
+        &__inner {
+            padding: 50px 0px;
+        }
+        &__item {
+            margin-bottom: 20px;
+        }
+        &__head {
+            font-size: 14px;
+            line-height: 13px;
+        }
+        &__title {
+            font-size: 46px;
+        }
+        &__text {
+            font-size: 20px;
+            &:first-child {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    .catalog {
+        &__inner {
+            padding: 50px 0px;
+        }
+        &__list {
+            @include flex (space-between);
+            flex-wrap: wrap;
+        }
+        &__listItems {
+            width: 49%;
+            height: 285px;
+            padding: 25px;
+            @include flex (start, start, column);
+            position: relative;
+        }
+        &__listItemsNumber {
+            display: block;
+            font-weight: bold;
+            font-size: 36px;
+            line-height: 34px;
+            color: #D8D8D8;
+            transform: rotate(-90deg);
+            position: absolute;
+            top: 25px;
+            right: 25px;
+        }
+        &__listItem {
+            &:first-child {
+                width: 80px;
+                height: 90px;
+                margin-right: 0px;
+                margin-bottom: 28px;
+            }
+            &:last-child {
+                width: 306px;
+            }
+        }
+        &__listTitle {
+            font-size: 21px;
+            line-height: 130%;
+        }
+        &__listText {
+            font-size: 18px;
+        }
+    }
+    .title {
+        font-size: 42px;
+    }
+
+    .catalog {
+        &__expositionBoxForImg {
+            width: 307px;
+            height: 271px;
+            float: left;
+            margin-right: 40px;
+        }
+        &__expositionText {
+            font-size: 18px;
+        }
+    }
+
+    .services {
+        &__list {  
+            margin-top: 25px; 
+            @include flex (space-between);
+            flex-wrap: wrap;
+        }
+        &__listItem {
+            height: 600px;
+            margin-right: 15px;
+            &:last-child {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .services {
+        &__title {
+            font-size: 36px;
+            line-height: 34px;
+            margin-bottom: 13px;
+        }
+        &__price {
+            margin-bottom: 16px;
+        }
+        &__priceNumber {
+            font-size: 36px;
+            line-height: 34px;
+        }
+        &__priceCarrensy {
+            font-size: 20px;
+            line-height: 19px;
+        }
+        &__time {
+            font-size: 20px;
+            line-height: 19px;
+            padding-left: 30px;
+            &::before {
+                width: 22px;
+                height: 22px;
+            }
+        }
+        &__whatIncludePriceTitle {
+            font-size: 18px;
+            line-height: 17px;        
+        }
+        &__whatIncludePriceList {
+            margin-top: 10px;
+            height: 290px;
+            overflow: auto;
+        }
+        &__whatIncludePriceListItem {
+            font-size: 18px;
+            margin: 0px 0px 15px 35px;
+            &--yes {
+                &::before {
+                    width: 24px;
+                    height: 24px;
+                    left: -35px;
+                    top: 2px; 
+                }
+            }
+            &--no {
+                &::before {
+                    width: 24px;
+                    height: 24px;
+                    left: -35px;
+                    top: 2px; 
+                }
+            }
+        }
+        &__button {
+            height: 60px;
+        }
+    }
+    .characteristics {
+        &__title {
+            font-size: 36px;
+        }
+        &__item {
+            margin-bottom: 15px;
+        }
+        &__serialNumber {
+            width: 38px;
+            height: 42px;
+            font-size: 20px;
+        }
+        &__text {
+            flex-basis: 500px;
+            font-size: 20px;
+            margin-left: 20px;
+        }
+        &__reminderItem {
+            margin-top: 30px;
+        }
+    }
+    .simbolReminder {
+        width: 38px;
+        height: 38px;
+    }
+    .whatCan {
+        &__title {
+            font-size: 42px;
+        }
+        &__itemTitle {
+            font-size: 18px;
+        }
+        &__itemNumber {
+            font-size: 18px;
+        }
+        &__itemButton {
+            width: 34px;
+            height: 34px;
+        }
+        &__itemText {
+            font-size: 18px;
+        }
+        &__notDoTitle {
+            font-size: 36px;
+        }
+        &__notDoList {
+            width: 100%;
+        }
+        &__notDoItem {
+            font-size: 17px;
+        }
+    }
+    
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .info {
+        &__inner {
+            padding: 60px 0px;
+            @include flex (start, start);
+        }
+        &__item {
+            margin-bottom: 0px;
+            &:first-child {
+                margin-right: 50px;
+            }
+            &:last-child {
+                max-width: 800px;
+            }
+        }
+        &__head {
+            font-size: 14px;
+            line-height: 13px;
+        }
+        &__title {
+            font-size: 46px;
+        }
+        &__text {
+            font-size: 20px;
+            &:first-child {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+}
+
+
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        padding: 0px 0px;
+        margin: 0px auto;
+    }
+
+    .header {
+        &__descriptionTitle {
+            font-size: 120px;
+        }
+        &__descriptionText {
+            font-weight: normal;
+            font-size: 30px;
+        }
+    }
+    .catalog {
+        &__inner {
+            padding: 50px 0px;
+        }
+        &__list {
+            @include flex (start);
+            flex-wrap: wrap;
+        }
+        &__listItems {
+            width: 285px;
+            @include flex (start, start, column);
+            margin-top: 25px;
+            margin-right: 10px;
+            &--width {
+                width: 380px;
+            }
+
+        }
+        &__listItem {
+            &:last-child {
+                width: 235px;
+            }
+        }
+    }
+    .title {
+        font-size: 46px;
+    }
+    .catalog {
+        &__exposition {
+            min-width: 345px;
+            width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 25px;
+        }
+        &__expositionBoxForImg {
+            width: 356px;
+            height: 315px;
+        }
+        &__expositionImg {
+            width: 290px;
+            height: 180px;
+        }
+    }
+
+    .services {
+        &__list {  
+            @include flex (start);
+            flex-wrap: nowrap;
+        }
+        &__listItem {
+            flex-basis: 285px;
+            flex-grow: 0;
+            height: 796px;
+            margin-right: 15px;
+            &:last-child {
+                margin-bottom: 15px;
+            }
+        }
+        &__whatIncludePriceList {
+            height: 480px;
+        }
+    }
+
+    .characteristics {
+        @include flex ();
+        &__box {
+            width: 50%;
+            &--hidden {
+                @include flex ();
+            }
+        }
+    }
+    .whatCan {
+        &__title {
+            font-size: 46px;
+            margin-bottom: 25px;
+        }
+        &__box {
+            flex-basis: 345px;
+            flex-grow: 1;
+            border: 1px solid #C2CFD5;
+            border-radius: 10px;
+            padding: 25px 15px;
+            margin-bottom: 20px;
+        }
+        &__list {
+            @include flex (start,start);
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: 50%;
+            padding: 15px;
+            @include flex (start, space-between, column);
+        }
+        &__itemHeader {
+            @include flex (space-between);
+        }
+        &__itemTitle {
+            flex-basis: 240px;
+            flex-grow: 1;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 130%;
+        }
+        &__itemNumber {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 130%;
+            color: $mainColor;
+        }
+        &__itemButton {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: $mainColor;
+            margin-left: 10px;
+            position: relative;
+            &::before, &::after {
+                content: '';
+                background-color: #fff;
+                border-radius: 1px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &::before {
+                width: 10px;
+                height: 2px;
+            }
+            &::after {
+                width: 2px;
+                height: 10px;
+            }
+    
+        }
+        &__itemMain {}
+        &__itemText {
+            margin-top: 10px;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 130%;
+            color: #595959;
+            text-align: justify;
+        }
+        &__notDo {
+            @include flex (start, center);
+        }
+        &__notDoTitle {
+            font-size: 36px;
+        }
+        &__notDoList {
+            @include flex(space-between);
+        }
+        &__notDoItem {
+            width: 33%;
+        }
+    }
+   
+    
+}
+

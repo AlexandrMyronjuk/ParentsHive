@@ -1,0 +1,13 @@
+@mixin flex($jc:center, $ai:center, $fd:row) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $fd;
+}
+
+@mixin imgPos(){
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
