@@ -834,6 +834,27 @@ body {
   color: #E1A122;
 }
 
+.dispatch__item {
+  -ms-flex-preferred-size: 345px;
+      flex-basis: 345px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: 1px solid #C2CFD5;
+  border-radius: 10px;
+  padding: 25px 15px;
+  margin-bottom: 20px;
+}
+
+.call__title {
+  font-size: 20px;
+}
+
+.call__text {
+  font-size: 16px;
+  color: #595959;
+}
+
 @media screen and (min-width: 555px) {
   .header__translocationBtn {
     margin-right: 70px;

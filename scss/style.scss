@@ -573,11 +573,23 @@ body {
 }
 
 .dispatch {
-    &__item {}
+    &__item {
+        flex-basis: 345px;
+        flex-grow: 1;
+        border: 1px solid #C2CFD5;
+        border-radius: 10px;
+        padding: 25px 15px;
+        margin-bottom: 20px;
+    }
 }
 .call {
-    &__title {}
-    &__text {}
+    &__title {
+        font-size: 20px;
+    }
+    &__text {
+        font-size: 16px;
+        color: $textColor;
+    }
     &__toggle {}
     &__toggleItem {}
     &__request {}
@@ -936,7 +948,7 @@ body {
     .title {
         font-size: 46px;
     }
-    
+
     .catalog {
         &__exposition {
             min-width: 345px;
