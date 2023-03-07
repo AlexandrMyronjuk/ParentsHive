@@ -34,26 +34,11 @@ body {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  min-height: 666px;
-}
-
-.header__scrollBg {
-  display: none;
-  background-color: #fff;
-}
-
-.header__scroll {
-  min-height: 80px;
-}
-
-.header__scroll .logo__linkImg {
-  width: 80px;
-  height: 60px;
 }
 
 .logo__linkImg {
-  width: 168px;
-  height: 122px;
+  width: 130px;
+  height: 100px;
 }
 
 .menu__hamburger {
@@ -78,7 +63,7 @@ body {
           box-shadow: 0 8px 0 0 #fff, 0 16px 0 0 #fff;
 }
 
-.header__inner, .header__scroll {
+.header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -103,7 +88,7 @@ body {
   font-size: 54px;
   line-height: 110%;
   text-shadow: 0px 0px 20px rgba(145, 145, 145, 0.25);
-  margin-top: 80px;
+  margin-top: 60px;
   position: relative;
 }
 
@@ -125,7 +110,7 @@ body {
 }
 
 .header__translocation {
-  margin-top: 90px;
+  margin-top: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,14 +142,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-bottom: 44px;
-}
-
-.header__translocationBtn {
   font-weight: normal;
   font-size: 18px;
   line-height: 17px;
   color: #FFFFFF;
+  margin-bottom: 44px;
+}
+
+.header__translocationBtn {
   padding: 23px 99px;
   background-color: #E1A122;
   border: none;
@@ -181,10 +166,6 @@ body {
 }
 
 .header__translocationLink {
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 17px;
-  color: #FFFFFF;
   position: relative;
 }
 
@@ -852,7 +833,7 @@ body {
   color: #E1A122;
 }
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 555px) {
   .header__translocationBtn {
     margin-right: 70px;
   }
@@ -872,13 +853,6 @@ body {
     left: 7px;
     -webkit-box-shadow: 0 9px 0 0 #fff, 0 18px 0 0 #fff;
             box-shadow: 0 9px 0 0 #fff, 0 18px 0 0 #fff;
-  }
-  .header__scroll {
-    min-height: 90px;
-  }
-  .header__scroll .logo__link-img {
-    width: 110px;
-    height: 80px;
   }
   .header__descriptionTitle {
     font-size: 110px;
